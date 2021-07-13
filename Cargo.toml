@@ -12,6 +12,9 @@ license = "MIT OR Apache-2.0"
 
 build = "build.rs"
 
+[dependencies]
+sgx_tstd = { rev = "v1.1.3", git = "https://github.com/apache/teaclave-sgx-sdk.git", optional = true }
+
 [badges]
 travis-ci = { repository = "cesarb/clear_on_drop" }
 appveyor = { repository = "cesarb/clear_on_drop" }
@@ -19,8 +22,8 @@ appveyor = { repository = "cesarb/clear_on_drop" }
 [features]
 no_cc = []
 nightly = ["no_cc"]
+default = ["no_cc"]
 
 [build-dependencies]
 cc = "1.0"
 
-[dependencies]
